@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
@@ -44,12 +44,12 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 #include "fibonacci.c"
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "󰝘",        tile },    /* first entry is default */
-	{ "",        NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
- 	{ "",        spiral },
- 	{ "",        dwindle },
+	/* symbol   arrange function */
+	{ "[T]",    tile },    /* first entry is default */
+	{ "[F]",    NULL },    /* no layout function means floating behavior */
+	{ "[M]",    monocle },
+ 	{ "[S]",    spiral },
+ 	{ "[D]",    dwindle },
 };
 
 /* key definitions */

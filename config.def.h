@@ -90,6 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period,                focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                 tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,                tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_y,                     spawn,          SHCMD("~/suckless/custom/plugins/dmenu/yt-cli.sh") },
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("volume-plugin -i 5") },
 	{ 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("volume-plugin -d 5") },
 	{ 0,                            XF86XK_AudioMute,         spawn,          SHCMD("volume-plugin -t") },
@@ -127,4 +128,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-

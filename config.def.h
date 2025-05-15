@@ -57,6 +57,9 @@ static const Layout layouts[] = {
 	{ "[M]",    monocle },
  	{ "[S]",    spiral },
  	{ "[D]",    dwindle },
+	{ "[K]",    deck },
+	{ "[B]",    bstack },
+	{ "[H]",    bstackhoriz },
 };
 
 /* key definitions */
@@ -83,7 +86,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,                     spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_n,                     spawn,          {.v = browsercmd } },
-	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
+	{ MODKEY|ShiftMask,             XK_f,                     fullscreen,     {0} },
 	{ MODKEY|ShiftMask,             XK_p,                     spawn,          {.v = volumecentercmd } },
 	{ MODKEY,                       XK_b,                     togglebar,      {0} },
 	{ MODKEY,                       XK_j,                     focusstack,     {.i = +1 } },
@@ -100,6 +103,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_m,                     setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,                     setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,                     setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_d,                     setlayout,      {.v = &layouts[5]} },
+	{ MODKEY,                       XK_u,                     setlayout,      {.v = &layouts[6]} },
+	{ MODKEY,                       XK_o,                     setlayout,      {.v = &layouts[7]} },
 	{ MODKEY,                       XK_space,                 setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,                 togglefloating, {0} },
 	{ MODKEY,                       XK_0,                     view,           {.ui = ~0 } },

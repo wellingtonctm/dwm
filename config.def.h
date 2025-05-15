@@ -57,8 +57,8 @@ static const Layout layouts[] = {
 	{ "[T]",    tile },    /* first entry is default */
 	{ "[M]",    monocle },
 	{ "[S]",    spiral },
-	{ "[D]",    dwindle },
-	{ "[K]",    deck },
+	{ "[A]",    dwindle },
+	{ "[D]",    deck },
 	{ "[B]",    bstack },
 	{ "[H]",    bstackhoriz },
 	{ "[F]",    NULL },    /* no layout function means floating behavior */

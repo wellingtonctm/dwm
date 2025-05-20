@@ -80,10 +80,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "brave-browser-stable", NULL };
-static const char *volumecentercmd[]  = { "pavucontrol-qt", NULL };
-static const char *screenshotcmd[]  = { "flameshot", "gui", NULL };
+static const char *termcmd[] = { "st", NULL };
+static const char *browsercmd[] = { "brave-browser-stable", NULL };
+static const char *volumecentercmd[] = { "pavucontrol-qt", NULL };
+static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
@@ -133,6 +133,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("xbacklight -inc 10") },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("xbacklight -dec 10") },
 	{ 0,                            XF86XK_AudioPlay,         spawn,          SHCMD("yt-cli --toggle") },
+	{ 0,                            XF86XK_AudioPause,         spawn,         SHCMD("yt-cli --toggle") },
 	{ 0,                            XF86XK_AudioNext,         spawn,          SHCMD("yt-cli --next") },
 	{ 0,                            XF86XK_AudioPrev,         spawn,          SHCMD("yt-cli --prev") },
 	{ 0,                            XF86XK_AudioStop,         spawn,          SHCMD("yt-cli --kill") },

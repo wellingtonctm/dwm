@@ -87,66 +87,69 @@ static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
-	{ MODKEY,                       XK_p,                     spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return,                spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_n,                     spawn,          {.v = browsercmd } },
-	{ MODKEY|ShiftMask,             XK_f,                     fullscreen,     {0} },
-	{ MODKEY|ShiftMask,             XK_p,                     spawn,          {.v = volumecentercmd } },
-	{ MODKEY,                       XK_b,                     togglebar,      {0} },
-	{ MODKEY,                       XK_j,                     focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,                     focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_s,                     togglesticky,   {0} },
+	{ MODKEY,                       XK_p,                     spawn,             {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_Return,                spawn,             {.v = termcmd } },
+	{ MODKEY,                       XK_n,                     spawn,             {.v = browsercmd } },
+	{ MODKEY|ShiftMask,             XK_f,                     fullscreen,        {0} },
+	{ MODKEY|ShiftMask,             XK_p,                     spawn,             {.v = volumecentercmd } },
+	{ MODKEY,                       XK_b,                     togglebar,         {0} },
+	{ MODKEY,                       XK_j,                     focusstack,        {.i = +1 } },
+	{ MODKEY,                       XK_k,                     focusstack,        {.i = -1 } },
+	{ MODKEY,                       XK_s,                     togglesticky,      {0} },
 	// { MODKEY,                       XK_i,                     incnmaster,     {.i = +1 } },
 	// { MODKEY,                       XK_d,                     incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,                     setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,                     setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return,                zoom,           {0} },
-	{ MODKEY,                       XK_Tab,                   view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,                     killclient,     {0} },
-	{ MODKEY,                       XK_t,                     setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_m,                     setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_r,                     setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_r,                     setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_d,                     setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_u,                     setlayout,      {.v = &layouts[5]} },
-	{ MODKEY,                       XK_o,                     setlayout,      {.v = &layouts[6]} },
-	{ MODKEY,                       XK_f,                     setlayout,      {.v = &layouts[7]} },
-	{ MODKEY,                       XK_space,                 setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,                 togglefloating, {0} },
-	{ MODKEY,                       XK_0,                     view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,                     tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,                 focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period,                focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,                 tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period,                tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_z,                     incrgaps,       {.i = +3 } },
-	{ MODKEY,                       XK_x,                     incrgaps,       {.i = -3 } },
-	{ MODKEY,                       XK_a,                     togglegaps,     {0} },
-	{ MODKEY|ShiftMask,             XK_a,                     defaultgaps,    {0} },
-	{ MODKEY,                       XK_y,                     spawn,          SHCMD("~/suckless/custom/plugins/dmenu/yt-cli.sh") },
-	{ MODKEY|ShiftMask,             XK_b,                     spawn,          SHCMD("~/suckless/custom/plugins/dmenu/bluetooth.sh") },
-	{ 0,                            XK_Print,                 spawn,          {.v = screenshotcmd } },
-	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("volume-plugin -i 5") },
-	{ 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("volume-plugin -d 5") },
-	{ 0,                            XF86XK_AudioMute,         spawn,          SHCMD("volume-plugin -t") },
-	{ 0,                            XF86XK_AudioMicMute,      spawn,          SHCMD("volume-plugin -m") },
-	{ 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("xbacklight -inc 10") },
-	{ 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("xbacklight -dec 10") },
-	{ 0,                            XF86XK_AudioPlay,         spawn,          SHCMD("yt-cli --toggle") },
-	{ 0,                            XF86XK_AudioPause,         spawn,         SHCMD("yt-cli --toggle") },
-	{ 0,                            XF86XK_AudioNext,         spawn,          SHCMD("yt-cli --next") },
-	{ 0,                            XF86XK_AudioPrev,         spawn,          SHCMD("yt-cli --prev") },
-	{ 0,                            XF86XK_AudioStop,         spawn,          SHCMD("yt-cli --kill") },
-	TAGKEYS(                        XK_1,                                     0)
-	TAGKEYS(                        XK_2,                                     1)
-	TAGKEYS(                        XK_3,                                     2)
-	TAGKEYS(                        XK_4,                                     3)
-	TAGKEYS(                        XK_5,                                     4)
-	TAGKEYS(                        XK_6,                                     5)
-	TAGKEYS(                        XK_7,                                     6)
-	TAGKEYS(                        XK_8,                                     7)
-	TAGKEYS(                        XK_9,                                     8)
-	{ MODKEY|ShiftMask,             XK_q,                     quit,           {0} },
+	{ MODKEY,                       XK_h,                     setmfact,          {.f = -0.05} },
+	{ MODKEY,                       XK_l,                     setmfact,          {.f = +0.05} },
+	{ MODKEY,                       XK_Return,                zoom,              {0} },
+	{ MODKEY,                       XK_Tab,                   view,              {0} },
+	{ MODKEY|ShiftMask,             XK_c,                     killclient,        {0} },
+	{ MODKEY,                       XK_t,                     setlayout,         {.v = &layouts[0]} },
+	{ MODKEY,                       XK_m,                     setlayout,         {.v = &layouts[1]} },
+	{ MODKEY,                       XK_r,                     setlayout,         {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_r,                     setlayout,         {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,             XK_d,                     setlayout,         {.v = &layouts[4]} },
+	{ MODKEY,                       XK_u,                     setlayout,         {.v = &layouts[5]} },
+	{ MODKEY,                       XK_o,                     setlayout,         {.v = &layouts[6]} },
+	{ MODKEY,                       XK_f,                     setlayout,         {.v = &layouts[7]} },
+	{ MODKEY,                       XK_space,                 setlayout,         {0} },
+	{ MODKEY|ShiftMask,             XK_space,                 togglefloating,    {0} },
+	{ MODKEY,                       XK_0,                     view,              {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,                     tag,               {.ui = ~0 } },
+	{ MODKEY,                       XK_comma,                 focusmon,          {.i = -1 } },
+	{ MODKEY,                       XK_period,                focusmon,          {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_comma,                 tagmon,            {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_period,                tagmon,            {.i = +1 } },
+	{ MODKEY,                       XK_z,                     incrgaps,          {.i = +3 } },
+	{ MODKEY,                       XK_x,                     incrgaps,          {.i = -3 } },
+	{ MODKEY,                       XK_a,                     togglegaps,        {0} },
+	{ MODKEY|ShiftMask,             XK_a,                     defaultgaps,       {0} },
+	{ MODKEY,                       XK_minus,                 scratchpad_show,   {0} },
+	{ MODKEY|ShiftMask,             XK_minus,                 scratchpad_hide,   {0} },
+	{ MODKEY,                       XK_equal,                 scratchpad_remove, {0} },
+	{ MODKEY,                       XK_y,                     spawn,             SHCMD("~/suckless/custom/plugins/dmenu/yt-cli.sh") },
+	{ MODKEY|ShiftMask,             XK_b,                     spawn,             SHCMD("~/suckless/custom/plugins/dmenu/bluetooth.sh") },
+	{ 0,                            XK_Print,                 spawn,             {.v = screenshotcmd } },
+	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,             SHCMD("volume-plugin -i 5") },
+	{ 0,                            XF86XK_AudioLowerVolume,  spawn,             SHCMD("volume-plugin -d 5") },
+	{ 0,                            XF86XK_AudioMute,         spawn,             SHCMD("volume-plugin -t") },
+	{ 0,                            XF86XK_AudioMicMute,      spawn,             SHCMD("volume-plugin -m") },
+	{ 0,                            XF86XK_MonBrightnessUp,   spawn,             SHCMD("xbacklight -inc 10") },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn,             SHCMD("xbacklight -dec 10") },
+	{ 0,                            XF86XK_AudioPlay,         spawn,             SHCMD("yt-cli --toggle") },
+	{ 0,                            XF86XK_AudioPause,         spawn,            SHCMD("yt-cli --toggle") },
+	{ 0,                            XF86XK_AudioNext,         spawn,             SHCMD("yt-cli --next") },
+	{ 0,                            XF86XK_AudioPrev,         spawn,             SHCMD("yt-cli --prev") },
+	{ 0,                            XF86XK_AudioStop,         spawn,             SHCMD("yt-cli --kill") },
+	TAGKEYS(                        XK_1,                                        0)
+	TAGKEYS(                        XK_2,                                        1)
+	TAGKEYS(                        XK_3,                                        2)
+	TAGKEYS(                        XK_4,                                        3)
+	TAGKEYS(                        XK_5,                                        4)
+	TAGKEYS(                        XK_6,                                        5)
+	TAGKEYS(                        XK_7,                                        6)
+	TAGKEYS(                        XK_8,                                        7)
+	TAGKEYS(                        XK_9,                                        8)
+	{ MODKEY|ShiftMask,             XK_q,                     quit,              {0} },
 };
 
 /* button definitions */

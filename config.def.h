@@ -128,6 +128,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("volume-plugin -i 5") },
 	{ 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("volume-plugin -d 5") },
 	{ 0,                            XF86XK_AudioMute,         spawn,          SHCMD("volume-plugin -t") },
+	{ 0,                            XF86XK_AudioMicMute,      spawn,          SHCMD("volume-plugin -m") },
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("xbacklight -inc 10") },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("xbacklight -dec 10") },
 	{ 0,                            XF86XK_AudioPlay,         spawn,          SHCMD("yt-cli --toggle") },

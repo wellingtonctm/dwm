@@ -84,6 +84,8 @@ static const char *termcmd[] = { "st", NULL };
 static const char *browsercmd[] = { "brave-browser-stable", NULL };
 static const char *volumecentercmd[] = { "pavucontrol-qt", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
+static const char *lockscreencmd[] = { "physlock", NULL };
+
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
@@ -92,6 +94,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_n,                     spawn,             {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_f,                     fullscreen,        {0} },
 	{ MODKEY|ShiftMask,             XK_p,                     spawn,             {.v = volumecentercmd } },
+	{ MODKEY|ShiftMask,             XK_l,                     spawn,             {.v = lockscreencmd } },
 	{ MODKEY,                       XK_b,                     togglebar,         {0} },
 	{ MODKEY,                       XK_j,                     focusstack,        {.i = +1 } },
 	{ MODKEY,                       XK_k,                     focusstack,        {.i = -1 } },

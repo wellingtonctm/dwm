@@ -17,7 +17,7 @@ static const char col_gray2[]       = "#000000";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const unsigned int baralpha = 0xcc;
+static const unsigned int baralpha = OPAQUE; // 0xcc;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -84,7 +84,7 @@ static const char *termcmd[] = { "st", NULL };
 static const char *browsercmd[] = { "brave-browser-stable", NULL };
 static const char *volumecentercmd[] = { "pavucontrol-qt", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
-static const char *lockscreencmd[] = { "physlock", NULL };
+static const char *lockscreencmd[] = { "slock", NULL };
 
 
 static const Key keys[] = {

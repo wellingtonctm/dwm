@@ -10,8 +10,8 @@ static const unsigned int gappov    = 5;       /* vert outer gap between windows
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=11" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=11";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=9" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=9";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#000000";
 static const char col_gray3[]       = "#bbbbbb";

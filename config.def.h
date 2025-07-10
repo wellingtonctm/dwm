@@ -88,7 +88,7 @@ static const char *volumecentercmd[] = { "pavucontrol-qt", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *lockscreencmd[] = {
     "sh", "-c",
-    "slock && sleep 1 && xset dpms force off",
+    "slock & sleep 0.2 && xset dpms force off",
     NULL
 };
 

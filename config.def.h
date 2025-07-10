@@ -86,7 +86,11 @@ static const char *termcmd[] = { "st", NULL };
 static const char *browsercmd[] = { "brave-browser-stable", NULL };
 static const char *volumecentercmd[] = { "pavucontrol-qt", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
-static const char *lockscreencmd[] = { "slock", NULL };
+static const char *lockscreencmd[] = {
+    "sh", "-c",
+    "slock && sleep 1 && xset dpms force off",
+    NULL
+};
 
 
 static const Key keys[] = {

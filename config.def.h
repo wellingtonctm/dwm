@@ -138,6 +138,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_y,                     spawn,             SHCMD("~/suckless/custom/plugins/dmenu/yt-cli.sh") },
 	{ MODKEY|ShiftMask,             XK_b,                     spawn,             SHCMD("~/suckless/custom/plugins/dmenu/bluetooth.sh") },
 	{ MODKEY,                       XK_v,                     spawn,             SHCMD("~/suckless/custom/plugins/dmenu/fortivpn.sh") },
+	{ MODKEY,                       XK_w,                     spawn,             SHCMD("~/suckless/custom/plugins/dmenu/wifi.sh") },
 	{ 0,                            XK_Print,                 spawn,             {.v = screenshotcmd } },
 	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,             SHCMD("volume-plugin -i 5") },
 	{ 0,                            XF86XK_AudioLowerVolume,  spawn,             SHCMD("volume-plugin -d 5") },
